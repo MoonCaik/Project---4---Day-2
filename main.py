@@ -36,9 +36,19 @@ def main():
           Player.speed[1]=-10
         if event.key==pygame.K_DOWN:
           Player.speed[1]=10
+      if event.type == pygame.KEYUP:
+        if event.key==pygame.K_RIGHT:
+          Player.speed[0]=0
+        if event.key==pygame.K_LEFT:
+          Player.speed[0]=0
+        if event.key==pygame.K_UP:
+          Player.speed[1]=0
+        if event.key==pygame.K_DOWN:
+          Player.speed[1]=0
     screen.fill((0,0,100))  
     screen.blit(Player.image,Player.rect)
     pygame.display.flip()
+    Player.update()
 
 if __name__=="__main__":
   main()
